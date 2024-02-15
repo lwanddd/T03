@@ -39,6 +39,10 @@ document.addEventListener('DOMContentLoaded', function() {
           rs = rs.slice(0,rs.length-1)
           alert("Input error")
         }
+        if(rs.charAt(rs.length-2)=="+" || rs.charAt(rs.length-2)=="-" || rs.charAt(rs.length-2)=="*" || rs.charAt(rs.length-2)=="/" || rs.charAt(rs.length-2)=="." ){
+          rs = rs.slice(0,rs.length-1)
+          alert("Input error")
+        }
         displayvalue.textContent = rs
         //alert(op[o].textContent);
       }
@@ -52,6 +56,10 @@ document.addEventListener('DOMContentLoaded', function() {
       rs = rs.slice(0,rs.length-1)
       alert("Input error")
     }
+    if(rs.charAt(rs.length-2)=="+" || rs.charAt(rs.length-2)=="-" || rs.charAt(rs.length-2)=="*" || rs.charAt(rs.length-2)=="/" || rs.charAt(rs.length-2)=="." ){
+          rs = rs.slice(0,rs.length-1)
+          alert("Input error")
+        }
     displayvalue.textContent = rs
     //alert(".");
   }
