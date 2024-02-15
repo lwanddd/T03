@@ -21,13 +21,18 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   for (let o = 0; o < op.length; o++) {
     op[o].addEventListener('click', oponclick);
-
     function oponclick() {
       if (op[o].textContent == "x") {
         rs += "*"
+        //alert(rs.charAt(rs.length-1))
+        if(rs.charAt(rs.length-1)== rs.charAt(rs.length-3)){
+          rs = rs.slice(0,rs.length-1)
+          alert("Input error")
+        }
         displayvalue.textContent = rs
         //alert("*");
-      } else {
+      }
+      else {
         rs += op[o].textContent
         displayvalue.textContent = rs
         //alert(op[o].textContent);
@@ -38,6 +43,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function dotclick() {
     rs += "."
+    if(rs.charAt(rs.length-1)== rs.charAt(rs.length-2)){
+      rs = rs.slice(0,rs.length-1)
+      alert("Input error")
+    }
     displayvalue.textContent = rs
     //alert(".");
   }
