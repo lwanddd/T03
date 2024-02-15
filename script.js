@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
   let clb = document.getElementById('clear');
   let eqb = document.getElementById('equals');
  let rs = "0"
+ let endwith = "0"
   for (let i = 0; i < digitbtns.length; i++) {
     digitbtns[i].addEventListener('click', digitOnClick);
 
@@ -34,6 +35,10 @@ document.addEventListener('DOMContentLoaded', function() {
       }
       else {
         rs += op[o].textContent
+        if(rs.charAt(rs.length-1)== rs.charAt(rs.length-2)){
+          rs = rs.slice(0,rs.length-1)
+          alert("Input error")
+        }
         displayvalue.textContent = rs
         //alert(op[o].textContent);
       }
